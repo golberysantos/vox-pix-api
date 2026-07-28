@@ -1,0 +1,37 @@
+services:
+  # Servico de Banco de Dados MySQL
+  db:
+    image: mysql:8.0
+    container_name: voxpix-db
+    restart: always
+    environment:
+      MYSQL_DATABASE: voxpixdb
+      MYSQL_USER: voxpix_user
+      MYSQL_PASSWORD: voxpix_pass
+      MYSQL_ROOT_PASSWORD: voxpix_root_pass
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  # Servico da nossa API Spring Boot
+  app:
+    build: .
+    container_name: voxpix-api
+    restart: always
+    ports:
+      - "8080:8080"
+    environment:
+      # Ativa o perfil 'prod' para usar o MySQL e chaves de IA reais
+      - SPRING_PROFILES_ACTIVE=prod
+      - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/voxpixdb?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      - SPRING_DATASOURCE_USERNAME=voxpix_user
+      - SPRING_DATASOURCE_PASSWORD=voxpix_pass
+      # Chaves de API Reais (insira suas chaves aqui se desejar rodar em producao)
+      - GROQ_API_KEY=sua_chave_groq_aqui
+      - GEMINI_API_KEY=sua_chave_gemini_aqui
+    depends_on:
+      - db
+
+volumes:
+  mysql_data:
