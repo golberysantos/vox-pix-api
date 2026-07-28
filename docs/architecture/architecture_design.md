@@ -34,3 +34,19 @@ O projeto demonstra o uso prático de vários padrões de projeto clássicos (Go
   * Gerenciado pelo Spring Boot através da injeção de dependências em escopo padrão (`@Component`, `@Service`, `@Repository`), garantindo instâncias únicas e controle de concorrência.
 * **Builder Pattern:**
   * Utilizado na criação de instâncias de `Transacao` e `Conta` para facilitar a construção de objetos complexos e imutáveis.
+
+---
+
+## 3. Estratégia de Banco de Dados Híbrido e Ambientes (Spring Profiles)
+
+Para garantir flexibilidade entre a execução local 100% livre de dependências externas e um deploy robusto de portfólio, a API adota uma estratégia de múltiplos perfis:
+
+* **Perfil `dev` (H2 Database + Offline Mock AI):**
+  * **Uso:** Testes rápidos locais na IDE e validação automática da plataforma DIO.
+  * **Banco:** H2 Database em memória (reinicia limpo a cada execução).
+  * **IA:** Mocks/Stubs em memória simulam as respostas da IA offline com latência zero e custo nulo.
+* **Perfil `prod` (MySQL Database + Real AI Integration):**
+  * **Uso:** Simulação real e deploy em containers (Docker).
+  * **Banco:** MySQL executado através de container.
+  * **IA:** Chamadas HTTP reais utilizando clientes OpenFeign integrando com a API da Groq (Whisper) e Google AI Studio (Gemini).
+
