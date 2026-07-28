@@ -49,12 +49,12 @@ Este documento contém o Backlog do Produto organizado por Histórias de Usuári
   * [x] Criar interface OpenFeign para a API Gemini (extração de intenção) no perfil prod.
   * [x] Desenvolver adaptadores e mocks locais (no perfil dev) para simulação 100% offline.
 
-### Sprint 4: Orquestração e Endpoints REST (Controllers)
+### Sprint 4: Orquestração e Endpoints REST (Controllers) (Concluída)
 * **Objetivo:** Integrar os serviços e expor as rotas de voz.
 * **Tarefas:**
-  * [ ] Desenvolver `BankingService` (operações bancárias).
-  * [ ] Desenvolver `VoiceCommandService` (orquestrador de voz).
-  * [ ] Criar controlador REST `/api/voice/process` recebendo arquivos multipart.
+  * [x] Desenvolver `BankingService` (debitos, creditos, logs de transacoes e H2/MySQL).
+  * [x] Desenvolver `VoiceCommandService` (orquestrador de voz, transcricao e extracao).
+  * [x] Criar controlador REST `/api/voz/processar` e `/api/contas` protegidos com Spring Security.
 
 ### Sprint 5: Docker e Entrega
 * **Objetivo:** Empacotamento profissional do projeto.

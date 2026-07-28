@@ -20,4 +20,8 @@ public interface ContaRepository {
     Optional<Conta> buscarPorId(Long id);
 
     Conta salvar(Conta conta);
+
+    Optional<Conta> buscarPorTitular(String titular);
+
+    java.util.List<Conta> listarTodas();
 }

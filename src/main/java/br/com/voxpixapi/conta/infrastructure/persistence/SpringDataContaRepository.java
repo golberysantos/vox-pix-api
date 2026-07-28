@@ -13,4 +13,6 @@ public interface SpringDataContaRepository extends JpaRepository<ContaEntity, Lo
     Optional<ContaEntity> findByNumeroConta(String numeroConta);
 
     Optional<ContaEntity> findByCpf(String cpf);
+
+    Optional<ContaEntity> findFirstByTitularContainingIgnoreCase(String titular);
 }

@@ -47,4 +47,17 @@ public class ContaRepositoryAdapter implements ContaRepository {
         ContaEntity entitySalva = springDataRepository.save(entity);
         return entitySalva.paraDominio();
     }
+
+    @Override
+    public Optional<Conta> buscarPorTitular(String titular) {
+        return springDataRepository.findFirstByTitularContainingIgnoreCase(titular)
+                .map(ContaEntity::paraDominio);
+    }
+
+    @Override
+    public java.util.List<Conta> listarTodas() {
+        return springDataRepository.findAll().stream()
+                .map(ContaEntity::paraDominio)
+                .collect(java.util.stream.Collectors.toList());
+    }
 }

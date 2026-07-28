@@ -50,3 +50,16 @@ Para garantir flexibilidade entre a execução local 100% livre de dependências
   * **Banco:** MySQL executado através de container.
   * **IA:** Chamadas HTTP reais utilizando clientes OpenFeign integrando com a API da Groq (Whisper) e Google AI Studio (Gemini).
 
+---
+
+## 4. Estratégia de Qualidade e Padrão de Testes AAA (Arrange, Act, Assert)
+
+Para manter a manutenibilidade e a clareza da cobertura de testes, a equipe adota o padrão **AAA (Arrange, Act, Assert)** estruturado em todos os testes unitários e de integração:
+
+* **Arrange (Preparar):** Instanciação das entidades, DTOs e stub de comportamentos dos mocks (ex: `Mockito.when(...)`).
+* **Act (Agir):** Execução do comportamento principal sob teste (ex: chamada de endpoint `mockMvc.perform(...)` ou chamada de método de serviço).
+* **Assert (Verificar):** Validação dos retornos HTTP, códigos de status e dados de resposta (ex: `andExpect(status().isOk())`, `assertEquals(...)`).
+
+A adoção explícita deste padrão assegura legibilidade imediata da suite de testes para desenvolvedores e avaliadores.
+
+
