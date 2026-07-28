@@ -42,12 +42,12 @@ Este documento contém o Backlog do Produto organizado por Histórias de Usuári
   * [x] Configurar usuários em memória para simulação de clientes bancários.
   * [x] Proteger rotas REST de acordo com perfis e permissões e testar com MockMvc e Basic Auth.
 
-### Sprint 3: Clientes de Inteligência Artificial (OpenFeign)
+### Sprint 3: Clientes de Inteligência Artificial (OpenFeign) (Concluída)
 * **Objetivo:** Mapear os clientes HTTP para consumo das APIs externas de IA.
 * **Tarefas:**
-  * [ ] Criar interface OpenFeign para a API Whisper (conversão de áudio em texto).
-  * [ ] Criar interface OpenFeign para a API Gemini (extração de intenção de áudio).
-  * [ ] Desenvolver adaptadores para converter retornos brutos em tipos de domínio.
+  * [x] Criar interface OpenFeign para a API Whisper (conversão de áudio em texto) no perfil prod.
+  * [x] Criar interface OpenFeign para a API Gemini (extração de intenção) no perfil prod.
+  * [x] Desenvolver adaptadores e mocks locais (no perfil dev) para simulação 100% offline.
 
 ### Sprint 4: Orquestração e Endpoints REST (Controllers)
 * **Objetivo:** Integrar os serviços e expor as rotas de voz.
