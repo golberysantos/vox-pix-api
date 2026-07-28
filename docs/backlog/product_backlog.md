@@ -35,12 +35,12 @@ Este documento contém o Backlog do Produto organizado por Histórias de Usuári
   * [x] Criar carga inicial de dados em memória (CommandLineRunner).
   * [x] Implementar testes unitários da classe `Conta`.
 
-### Sprint 2: Segurança e Controle de Acesso
+### Sprint 2: Segurança e Controle de Acesso (Concluída)
 * **Objetivo:** Garantir a autenticação de chamadas HTTP.
 * **Tarefas:**
-  * [ ] Configurar Spring Security 6.x / 4.x.
-  * [ ] Configurar usuários em memória para simulação de clientes bancários.
-  * [ ] Proteger rotas REST de acordo com perfis e permissões.
+  * [x] Configurar Spring Security 6.x / 4.x.
+  * [x] Configurar usuários em memória para simulação de clientes bancários.
+  * [x] Proteger rotas REST de acordo com perfis e permissões e testar com MockMvc e Basic Auth.
 
 ### Sprint 3: Clientes de Inteligência Artificial (OpenFeign)
 * **Objetivo:** Mapear os clientes HTTP para consumo das APIs externas de IA.
