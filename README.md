@@ -79,6 +79,21 @@ Este ambiente conecta-se ao banco de dados MySQL corporativo e executa as chamad
 
 ---
 
+## 📖 Testando a API Interativamente (Swagger UI)
+
+A API possui o **Swagger UI** integrado, o que permite realizar testes de usabilidade em todos os endpoints privados e carregar os arquivos de áudio diretamente do seu navegador, sem a necessidade de instalar ferramentas externas como o Postman.
+
+### Passo a Passo para Teste:
+1.  Com a aplicação rodando (seja localmente no perfil `dev` ou via Docker), abra o navegador e acesse a URL:
+    *   `http://localhost:8080/swagger-ui/index.html`
+2.  No canto superior direito da página, clique no botão **"Authorize"** (ícone de cadeado verde).
+3.  Insira as credenciais de um dos clientes de simulação bancária (ex: Usuário: `carlos` / Senha: `carlos123`) e clique em **Authorize** $\rightarrow$ **Close**.
+4.  Expanda o endpoint **`POST /api/voz/processar`** e clique em **"Try it out"**.
+5.  No campo `file`, clique em *Escolher arquivo* e envie um dos áudios de teste que adicionamos na pasta estática (você pode baixá-los diretamente clicando nos links da seção de endpoints abaixo).
+6.  Clique no botão azul **"Execute"** e visualize o JSON de resposta contendo a intenção mapeada e o saldo da conta atualizado!
+
+---
+
 ## 📡 Endpoints da API
 
 Todos os endpoints privados exigem cabeçalho de autenticação HTTP **Basic Auth** (utilizando as credenciais descritas na tabela de identidades).

@@ -17,6 +17,7 @@ O projeto é estruturado utilizando os princípios da Arquitetura Limpa dividida
    * Contém os detalhes de tecnologia: entidades de banco relacional do Hibernate (`ContaEntity`), interfaces do Spring Data, adaptadores de repositório, clientes HTTP declarativos (Feign) para consumo de IA.
 3. **Presentation (Apresentação):**
    * Contém os controladores REST, os DTOs de entrada e saída (Records), classes Facade e notificadores.
+   * Integra o **Springdoc OpenAPI (Swagger)** para geração de documentação e painel de testes interativos dos endpoints REST.
 
 ---
 
