@@ -6,19 +6,24 @@ A aplicação utiliza inteligência artificial de transcrição de fala (**OpenA
 
 ---
 
-## 🚀 Tecnologias Utilizadas
+## 🚀 Tecnologias e Dependências Utilizadas
 
-*   **Linguagem:** Java 21 (LTS)
-*   **Framework Core:** Spring Boot 4.0.7
-*   **Segurança:** Spring Security (HTTP Basic Auth)
-*   **Cliente HTTP Declarativo:** Spring Cloud OpenFeign
-*   **Banco de Dados:** 
-    *   **H2 Database** (Em memória para desenvolvimento e avaliação imediata)
-    *   **MySQL 8.0** (Persistência robusta em ambiente de produção)
-*   **Containerização:** Docker e Docker Compose
-*   **Provedores de Inteligência Artificial:**
-    *   **Groq API (Whisper-large-v3):** Transcrição ultrarrápida de fala para texto (Speech-to-Text).
-    *   **Google AI Studio (Gemini-1.5-flash):** Extração de intenções textuais e variáveis usando JSON Schema estruturado (*Structured Output*).
+O projeto utiliza as ferramentas mais modernas do ecossistema Java para fornecer uma API robusta, rápida e segura:
+
+| Tecnologia / Dependência | Versão | Descrição / Função no Projeto |
+| :--- | :--- | :--- |
+| **Java 21 (LTS)** | `21` | Linguagem de programação (utilizando **Java Records** nativos no lugar de Lombok). |
+| **Spring Boot** | `4.0.7` | Framework base para inicialização, autoconfiguração e orquestração de beans. |
+| **Spring Web MVC** | `4.0.7` | Criação e exposição dos endpoints REST e recepção de uploads multipart. |
+| **Spring Security** | `4.0.7` | Configuração de segurança de rotas e HTTP Basic Auth para autenticação de clientes. |
+| **Spring Data JPA** | `4.0.7` | Persistência de dados ORM baseada em repositórios para contas e transações. |
+| **Spring Cloud OpenFeign** | `4.2.0` | Clientes HTTP declarativos para consumo das APIs externas de IA. |
+| **Springdoc OpenAPI (Swagger)** | `2.8.5` | Autogeração da documentação OpenAPI 3 e painel interativo de testes web. |
+| **H2 Database** | `2.4.240` | Banco de dados em memória ativo no perfil `dev` (fácil avaliação e latência zero). |
+| **MySQL Connector** | `8.x` | Driver para conexão com banco de dados MySQL de produção no perfil `prod`. |
+| **JUnit 5 / Mockito** | `Spring Boot 4` | Suíte de testes automatizados com mocks de comportamento (MockitoBean). |
+| **Maven** | `3.x` | Gerenciador de dependências e build automatizada (empacotado via Maven Wrapper). |
+| **Docker / Docker Compose** | `3.x` | Containerização multi-stage e orquestração de banco + app local em produção. |
 
 ---
 
