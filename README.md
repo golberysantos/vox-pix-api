@@ -88,6 +88,10 @@ Todos os endpoints privados exigem cabeçalho de autenticação HTTP **Basic Aut
 *   **Content-Type:** `multipart/form-data`
 *   **Parâmetros (Form):**
     *   `file`: O arquivo de áudio gravado (`.mp3` ou `.wav`).
+*   **Áudios de Teste Integrados (Download direto no navegador para carregar no Swagger):**
+    *   [saldo.mp3](http://localhost:8080/audio/saldo.mp3) $\rightarrow$ Simula: *"Quero ver meu saldo, por favor"* (Consulta Saldo).
+    *   [maria.mp3](http://localhost:8080/audio/maria.mp3) $\rightarrow$ Simula: *"Transfira 150 reais para a Maria"* (Pix para Maria).
+    *   [joao.mp3](http://localhost:8080/audio/joao.mp3) $\rightarrow$ Simula: *"Faça um Pix de 300 reais para o João"* (Pix para João).
 *   **Comportamento do Perfil `dev` (Mock AI):**
     *   Se o nome do arquivo conter `saldo`, transcreve para *"Quero ver meu saldo, por favor"* e consulta o saldo do usuário.
     *   Se o nome do arquivo conter `maria`, transcreve para *"Transfira 150 reais para a Maria"* e realiza o Pix para a Maria.
