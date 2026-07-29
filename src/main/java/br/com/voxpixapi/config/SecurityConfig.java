@@ -33,9 +33,9 @@ public class SecurityConfig {
         http
             .csrf(AbstractHttpConfigurer::disable) // Desabilita CSRF por ser uma API REST Stateless
             .authorizeHttpRequests(auth -> auth
-                // Rotas de console do banco H2 necessitam de liberação temporária em dev
-                .requestMatchers("/h2-console/**").permitAll()
-                // Qualquer outra requisição à API exige autenticação HTTP Basic
+                // Rotas de console do banco H2 e documentacao do Swagger UI necessitam de liberacao
+                .requestMatchers("/h2-console/**", "/swagger-ui/**", "/v3/api-docs/**", "/swagger-ui.html").permitAll()
+                // Qualquer outra requisicao exige autenticacao HTTP Basic
                 .anyRequest().authenticated()
             )
             // Permite renderização de frames para o console H2 funcionar no navegador

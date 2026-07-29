@@ -65,6 +65,7 @@ Este perfil é ativo por padrão e **não exige internet ou chaves de API extern
     ./mvnw spring-boot:run
     ```
 3.  O console do banco H2 estará acessível em: `http://localhost:8080/h2-console` (URL JDBC: `jdbc:h2:mem:voxpixdb`, User: `sa`, Pass: `sa`).
+4.  A documentação interativa e painel de testes do **Swagger UI** estará acessível em: `http://localhost:8080/swagger-ui/index.html`. Para testar os endpoints privados diretamente por lá, clique no botão **"Authorize"** e digite as credenciais (ex: `carlos` / `carlos123`).
 
 ### Perfil `prod` (MySQL + Integração de IAs Reais - Via Docker)
 Este ambiente conecta-se ao banco de dados MySQL corporativo e executa as chamadas HTTP reais via OpenFeign para os endpoints do Gemini e da Groq.
